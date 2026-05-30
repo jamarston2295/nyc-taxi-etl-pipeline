@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.env
+
+logs/
+data/raw/
+data/processed/
+
+.airflowignore
+
+.idea/
+.vscode/
+
+postgres-db-volume/
