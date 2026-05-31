@@ -35,6 +35,7 @@ This project strengthened my understanding of:
 
 ## Architecture
 
+```text
 NYC Taxi Parquet Data
         ↓
 Extract Task
@@ -47,6 +48,7 @@ Transform Task
 Load Task
         ↓
 PostgreSQL
+```
 
 Orchestrated using Apache Airflow
 
