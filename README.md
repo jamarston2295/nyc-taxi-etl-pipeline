@@ -135,7 +135,7 @@ Feature engineering:
 
 <img src="docs/airflow_transform_logs.png" alt="Output table in Postgres">
 
-<img src="docs/airflow_loadS_logs.png" alt="Output table in Postgres">
+<img src="docs/airflow_load_logs.png" alt="Output table in Postgres">
 
 ---
 
