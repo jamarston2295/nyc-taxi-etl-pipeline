@@ -69,9 +69,8 @@ Orchestrated using Apache Airflow
 
 ## Project Structure
 
-NYC Taxi Data Pipeline/
-
 ```text
+NYC Taxi Data Pipeline/
 ├── dags/
 │   └── etl_pipeline.py
 │
