@@ -1,11 +1,200 @@
-Project Overview
+# NYC Taxi Data Pipeline
 
-Architecture
+## Overview
 
-Tech Stack
+This project demonstrates an end-to-end data engineering pipeline using Apache Airflow, Python, Docker and PostgreSQL.
 
-How to Run
+The pipeline ingests NYC Taxi trip data stored in Parquet format, performs data quality checks and feature engineering, and loads the processed data into PostgreSQL for downstream analysis.
 
-Example Outputs
+The project was built to showcase practical data engineering skills including:
 
-Engineering Challenges
+- Workflow orchestration with Airflow
+- ETL pipeline development in Python
+- Data quality validation
+- Feature engineering
+- PostgreSQL integration
+- Docker containerisation
+- Configuration management using environment variables
+- Logging and monitoring
+- Automated testing
+
+---
+
+## Key Learnings
+
+This project strengthened my understanding of:
+
+- Workflow orchestration with Airflow
+- Containerised development using Docker
+- Data quality validation techniques
+- PostgreSQL integration and schema management
+- Building maintainable Python ETL pipelines
+- Testing and configuration management
+
+---
+
+## Architecture
+
+NYC Taxi Parquet Data
+        ↓
+Extract Task
+        ↓
+Transform Task
+    - Data Quality Checks
+    - Datetime Processing
+    - Feature Engineering
+        ↓
+Load Task
+        ↓
+PostgreSQL
+
+Orchestrated using Apache Airflow
+
+---
+
+## Tech Stack
+
+- Python
+- Apache Airflow
+- Docker & Docker Compose
+- PostgreSQL
+- Pandas
+- PyArrow
+- SQLAlchemy
+- Pytest
+
+---
+
+## Project Structure
+
+NYC Taxi Data Pipeline/
+
+├── dags/
+│   └── etl_pipeline.py
+│
+├── scripts/
+│   ├── extract.py
+│   ├── transform.py
+│   └── load.py
+│
+├── utils/
+│   ├── config.py
+│   └── logger.py
+│
+├── tests/
+│   └── test_transform.py
+│
+├── data/
+│   ├── raw/
+│   └── processed/
+│
+├── docker-compose.yml
+├── requirements.txt
+├── .env
+└── README.md
+
+---
+
+## Pipeline Stages
+
+### Extract
+
+- Reads NYC Taxi trip data from Parquet files
+- Supports configurable batch sizes
+- Stores extracted data for downstream processing
+
+### Transform
+
+Data quality checks:
+
+- Removes records with missing critical fields
+- Removes trips with invalid durations
+- Removes trips with negative fares
+- Removes unrealistic trip distances
+
+Feature engineering:
+
+- Trip duration (minutes)
+- Average speed (mph)
+- Pickup hour
+- Pickup day name
+- Weekend indicator
+- Trip category (short / medium / long)
+
+### Load
+
+- Loads transformed data into PostgreSQL
+- Creates destination table if required
+- Appends processed records for analysis
+
+---
+
+## Configuration
+
+The pipeline uses environment variables stored in a `.env` file.
+
+Example configuration:
+
+POSTGRES_USER=airflow
+POSTGRES_PASSWORD=airflow
+POSTGRES_DB=airflow
+
+BATCH_SIZE=50000
+
+---
+
+## Running the Project
+
+Start Airflow and supporting services:
+
+docker compose up -d
+
+Trigger the DAG from the Airflow UI:
+
+http://localhost:8080
+
+Run tests:
+
+pytest
+
+---
+
+## Output
+
+The processed dataset includes engineered features such as:
+
+- trip_duration_minutes
+- average_speed_mph
+- pickup_hour
+- pickup_day_name
+- is_weekend
+- trip_category
+
+![Output table in Postgres](C:\Users\jamar\OneDrive\Documents\Portfolio\Projects\NYC Taxi Data Pipeline\docs\postgres_output.png)
+
+---
+
+## Engineering Challenges Encountered
+
+During development several real-world engineering issues were encountered and resolved:
+
+- Docker volume mounting issues
+- Airflow DAG import errors
+- Container networking and hostname resolution issues
+- Schema mismatches between source data and PostgreSQL
+- Memory constraints when processing large Parquet files
+- Configuration management across containers
+
+These challenges provided practical experience with debugging distributed data workflows and containerised applications.
+
+---
+
+## Future Improvements
+
+- Incremental loading
+- Data partitioning
+- CI/CD with GitHub Actions
+- Cloud deployment on AWS
+- Infrastructure as Code using Terraform
+- Data quality monitoring and alerting
+- dbt integration
