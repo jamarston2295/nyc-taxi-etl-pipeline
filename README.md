@@ -69,7 +69,7 @@ Orchestrated using Apache Airflow
 
 NYC Taxi Data Pipeline/
 
-'''
+```text
 ├── dags/
 │   └── etl_pipeline.py
 │
@@ -93,7 +93,7 @@ NYC Taxi Data Pipeline/
 ├── requirements.txt
 ├── .env
 └── README.md
-'''
+```
 ---
 
 ## Pipeline Stages
