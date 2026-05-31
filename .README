@@ -170,7 +170,7 @@ The processed dataset includes engineered features such as:
 - is_weekend
 - trip_category
 
-![Output table in Postgres](C:\Users\jamar\OneDrive\Documents\Portfolio\Projects\NYC Taxi Data Pipeline\docs\postgres_output.png)
+![Output table in Postgres](docs\postgres_output.png)
 
 ---
 
