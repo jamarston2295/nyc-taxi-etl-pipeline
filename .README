@@ -170,9 +170,7 @@ The processed dataset includes engineered features such as:
 - is_weekend
 - trip_category
 
-
-![Output table in Postgres](docs/postgres_output.png)
-
+<img src="docs/postgres_output.png" alt="Output table in Postgres">
 ---
 
 ## Engineering Challenges Encountered
