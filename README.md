@@ -50,6 +50,8 @@ Load Task
 PostgreSQL
 ```
 
+<img src="docs/airflow_dag.png" alt="Output table in Postgres">
+
 Orchestrated using Apache Airflow
 
 ---
@@ -128,6 +130,12 @@ Feature engineering:
 - Loads transformed data into PostgreSQL
 - Creates destination table if required
 - Appends processed records for analysis
+
+<img src="docs/airflow_extract_logs.png" alt="Output table in Postgres">
+
+<img src="docs/airflow_transform_logs.png" alt="Output table in Postgres">
+
+<img src="docs/airflow_load_logs.png" alt="Output table in Postgres">
 
 ---
 
