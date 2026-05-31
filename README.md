@@ -144,29 +144,29 @@ Feature engineering:
 The pipeline uses environment variables stored in a `.env` file.
 
 Example configuration:
-
+```text
 POSTGRES_USER=airflow
 POSTGRES_PASSWORD=airflow
 POSTGRES_DB=airflow
 
 BATCH_SIZE=50000
-
+```
 ---
 
 ## Running the Project
 
 Start Airflow and supporting services:
-
+```text
 docker compose up -d
-
+```
 Trigger the DAG from the Airflow UI:
 
 http://localhost:8080
 
 Run tests:
-
+```text
 pytest
-
+```
 ---
 
 ## Output
